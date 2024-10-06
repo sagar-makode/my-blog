@@ -1,0 +1,44 @@
+.icon-hover:hover {
+  color: black !important;
+  background-color: white !important;
+}
+
+
+.footerpadding{
+  padding: 20px 40px 0px 40px;
+}
+
+.footertitle p{
+
+margin-bottom: 0.5rem !important;
+}
+.footertitle h5{
+
+  margin-bottom: 0.7rem !important;
+  }
+  .pointer {
+    cursor: pointer;
+}
+
+  .footertext{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+      font-size: larger;
+  }
+
+@media (max-width: 768px) {
+
+  .footerpadding{
+    padding: 10px 20px 0px 20px;
+  }
+  .footertitle p{
+
+    margin-bottom: 0.3rem !important;
+    }
+
+
+}

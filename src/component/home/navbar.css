@@ -1,0 +1,113 @@
+.image-container {
+  position: relative;
+}
+
+.img-fluid {
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  /* font-size: 4vw; */
+  /* font-weight: bold; */
+  /* white-space: initial; */
+  max-width: 90%;
+  width: 90%;
+}
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+.nav-item{
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+    font-size: larger;
+}
+.marathi-font {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.animated-text {
+  font-size: calc(2rem + 1vw); /* Responsive font size */
+  margin-bottom: 30px !important;
+
+  
+
+  
+
+}
+.description-text {
+  font-size: calc(1rem + 0.5vw); /* Responsive font size for paragraph */
+  margin-top: 10px;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.card-body {
+  position: relative;
+  /* padding: 0 !important ; */
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: calc(1.5rem + 0.8vw); /* Reduce font size on smaller screens */
+    margin-bottom: 20px !important;
+
+  }
+
+  .description-text {
+    font-size: calc(0.9rem + 0.5vw); /* Reduce font size on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-text {
+    font-size: calc(1rem + 0.5vw); /* Further reduce font size for very small screens */
+    margin-bottom: 10px !important;
+
+  }
+
+  .description-text {
+    font-size: calc(0.5rem + 0.3vw); /* Further reduce font size for very small screens */
+  }
+}
+@media (max-width: 960px) {
+  .text-overlay {
+    top: 10% !important;
+ 
+
+  }
+  
+}
+
+
+
+.list-group-item{
+border: none;
+padding: 5px 0px;
+}
+
+.jodit-container img {
+  width: 100% !important; /* Ensure the image width is 100% */
+  height: auto !important; /* Maintain aspect ratio */
+  margin-bottom: 20px !important; /* Add margin below the image */
+}

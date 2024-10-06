@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+body{
+  font-family: "Noto Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -83,7 +83,7 @@ function CreateBlog() {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary mt-3">Submit Blog</button>
+        <button type="submit" className="btn btn-primary m-3">Submit Blog</button>
       </form>
     </div>
   )

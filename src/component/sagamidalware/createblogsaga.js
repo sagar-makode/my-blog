@@ -2,7 +2,7 @@
 
 import {takeLatest,call, put } from 'redux-saga/effects';
 import axios from 'axios';
-import { CREATE_NEW_BLOG, FETCH_ALL_BLOGS, FETCH_ALL_BLOGS_FAILURE, FETCH_ALL_BLOGS_SUCCESS } from '../actions/createblogActions';
+import { CREATE_NEW_BLOG, CREATEE_NEW_BLOG_SUCCESS, CREATEE_NEW_BLOGT_FAILURE, FETCH_ALL_BLOGS, FETCH_ALL_BLOGS_FAILURE, FETCH_ALL_BLOGS_SUCCESS } from '../actions/createblogActions';
 
 
 
@@ -13,22 +13,19 @@ import { CREATE_NEW_BLOG, FETCH_ALL_BLOGS, FETCH_ALL_BLOGS_FAILURE, FETCH_ALL_BL
     try {
         
       const response = yield call(axios.post, "https://my-blog-api-36vn.onrender.com/createblog", action.payload);
-      
-      
-
-  
-    //   if (response.data.token) {
-        // yield put({ type: SIGNIN_SUCCESS}); 
-        // sessionStorage.setItem('token', response.data.token);
-        // window.location.href = '/dashboard';
+      if (response.status === 200) {
+        console.log(response);
         
-
-    //   }
+        yield put({ type: CREATEE_NEW_BLOG_SUCCESS});
+      }else{
+        yield put({ type: CREATEE_NEW_BLOGT_FAILURE});
+      }
     } catch (error) {
-    //   yield put({ type: SIGNIN_FAILURE });
-      // console.error(error);
+      yield put({ type: CREATEE_NEW_BLOGT_FAILURE});
     }
   }
+
+
 
   function* fetchAllblogsdatasaga() {
     try {

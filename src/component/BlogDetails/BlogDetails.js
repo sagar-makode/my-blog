@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllblogs } from '../actions/createblogActions';
+import { Spinner } from 'react-bootstrap';
 
 const LatestBlogs = ({ allblogData }) => {
     return (
@@ -35,6 +36,8 @@ const LatestBlogs = ({ allblogData }) => {
 const BlogDetails = () => {
     const { title } = useParams(); // Get the encoded title from the URL
     const allblogData = useSelector((state) => state.createblog.allblogs);
+    const loading = useSelector(state => state.createblog.loading);
+
     const dispatch = useDispatch()
 
     // Find the selected blog using the decoded title
@@ -58,50 +61,60 @@ const BlogDetails = () => {
     }, [blog]);
 
     return (
-        <div className="container mt-4">
+
+        <div>
+            <div>
+                {loading ? (<div className="d-flex justify-content-center align-items-center text-primary" style={{ height: '50vh' }}>
+                    <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                </div>) : (<div className="container mt-4">
 
 
 
-            <div className="user-profile-container container-fluid">
-                <div className="main-body">
-                    <div className="row">
+                    <div className="user-profile-container container-fluid">
+                        <div className="main-body">
+                            <div className="row">
 
-                        <div className="col-lg-8">
-                            <div className="card">
-                                <div className="card-body">
+                                <div className="col-lg-8">
+                                    <div className="card">
+                                        <div className="card-body">
 
-                                    {blog ? (
-                                        <div>
-                                            <h1>{blog.title}</h1>
-                                            <div className="blog-content"
-                                                dangerouslySetInnerHTML={{ __html: blog.content }} />
+                                            {blog ? (
+                                                <div>
+                                                    <h1>{blog.title}</h1>
+                                                    <div className="blog-content"
+                                                        dangerouslySetInnerHTML={{ __html: blog.content }} />
+                                                </div>
+                                            ) : (
+                                                <p>Blog not found</p>
+                                            )}
+
+
+
                                         </div>
-                                    ) : (
-                                        <p>Blog not found</p>
-                                    )}
-
-
-
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
 
-                        {/* this is profile */}
-                        <div className="col-lg-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <LatestBlogs allblogData={allblogData} />
+                                {/* this is profile */}
+                                <div className="col-lg-4">
+                                    <div className="card">
+                                        <div className="card-body">
+                                            <LatestBlogs allblogData={allblogData} />
 
 
 
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>)}
             </div>
         </div>
+
     );
 };
 

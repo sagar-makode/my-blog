@@ -22,7 +22,7 @@ const LatestBlogs = ({ allblogData }) => {
                             {blogImg && (
                                 <img src={blogImg} alt={blog.title} className=" me-2" style={{ height: '50px' }} />
                             )}
-                            <a href={`/blog/${encodeURIComponent(blog.title)}`} className="text-decoration-none">
+                            <a href={`/${encodeURIComponent(blog.title)}`} className="text-decoration-none">
                                 {blog.title}
                             </a>
                         </li>

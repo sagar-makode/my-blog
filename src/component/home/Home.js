@@ -76,7 +76,7 @@ function Home() {
         ) : (
           <div className="container">
 
-            <div className="row">
+            <div className="row main_card">
               {visibleblogdata && visibleblogdata.length > 0 ? (
                 visibleblogdata.map((blog, index) => {
                   // Extract the image URL from blog.content
@@ -128,7 +128,7 @@ function Home() {
             </Spinner>
           </div>
         ) : (<div className="container">
-          <div className="row">
+          <div className="row main_card">
             {visiblesarkaariyojanablogdata && visiblesarkaariyojanablogdata.length > 0 ? (
               visiblesarkaariyojanablogdata.map((blog, index) => {
                 // Extract the image URL from blog.content

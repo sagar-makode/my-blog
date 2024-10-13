@@ -111,3 +111,8 @@ padding: 5px 0px;
   height: auto !important; /* Maintain aspect ratio */
   margin-bottom: 20px !important; /* Add margin below the image */
 }
+
+
+.main_card{
+  padding: 10px;
+}

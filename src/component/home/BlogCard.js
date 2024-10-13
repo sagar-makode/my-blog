@@ -28,7 +28,7 @@ const BlogCard = () => {
           </Spinner>
         </div>
       ) : (<div className="container">
-        <div className="row">
+        <div className="row main_card">
           {allblogData && allblogData.length > 0 ? (
             allblogData.map((blog, index) => {
               // Extract the image URL from blog.content

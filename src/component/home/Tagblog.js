@@ -38,7 +38,7 @@ function Tagblog() {
         </Spinner>
       </div>) : (
         <div className="container mt-5">
-          <div className="row">
+          <div className="row main_card">
             {filteredBlogs && filteredBlogs.length > 0 ? (
               filteredBlogs.map((blog, index) => {
                 // Extract the image URL from blog.content

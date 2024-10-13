@@ -1,14 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import './navbar.css';
 import logopng from '../../assets/images/logo.png';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import AuthContext from '../Admin/AuthContext';
 
 function Navbar() {
   const navigate = useNavigate();
-  const location = useLocation();
   const [searchTerm, setSearchTerm] = useState(''); // State for search input
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const navbarRef = useRef(null);
+  const { isAuthenticated, logout } = useContext(AuthContext);
+
 
   const handleCategoryClick = (search) => {
     navigate(`/tag/${search}`);
@@ -26,6 +28,10 @@ function Navbar() {
 
   const closeNavbar = () => {
     setIsNavbarOpen(false);
+  };
+
+  const handleLogout = () => {
+    logout();
   };
 
   useEffect(() => {
@@ -86,9 +92,23 @@ function Navbar() {
               <li className="nav-item">
                 <button className="nav-link active" aria-current="page" onClick={() => handleCombinedClick('ऑनलाइन फॉर्म')}>ऑनलाइन फॉर्म</button>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link active" onClick={closeNavbar} to="/createblog">नवीन ब्लॉग</Link>
-              </li>
+
+              {isAuthenticated ? (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link active" onClick={closeNavbar} to="/admin/createblog">नवीन ब्लॉग बनवा</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link active" onClick={closeNavbar} to="/admin/dashboard">सर्व बनवलेले ब्लॉग</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link active" onClick={(e) => { handleLogout(); closeNavbar(); }}>लॉग आऊट</Link>
+                  </li>
+
+
+                </>
+              ) : ("")}
+
             </ul>
             <form className="d-flex" role="search" onSubmit={handleSearchSubmit}>
               <input

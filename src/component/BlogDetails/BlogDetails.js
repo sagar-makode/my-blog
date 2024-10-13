@@ -35,8 +35,8 @@ const LatestBlogs = ({ allblogData }) => {
 
 const BlogDetails = () => {
     const { title } = useParams(); // Get the encoded title from the URL
-    const allblogData = useSelector((state) => state.createblog.allblogs);
-    const loading = useSelector(state => state.createblog.loading);
+    const allblogData = useSelector((state) => state.blog.allblogs);
+    const loading = useSelector(state => state.blog.loading);
 
     const dispatch = useDispatch()
 

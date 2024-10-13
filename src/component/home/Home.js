@@ -9,8 +9,8 @@ import { Spinner } from 'react-bootstrap';
 
 function Home() {
 
-  const allblogData = useSelector(state => state.createblog.allblogs);
-  const loading = useSelector(state => state.createblog.loading);
+  const allblogData = useSelector(state => state.blog.allblogs);
+  const loading = useSelector(state => state.blog.loading);
 
   const visibleblogdata = allblogData.slice(0, 6);
 

@@ -1,6 +1,6 @@
 import JoditEditor from 'jodit-react';
 import React, { useEffect, useRef, useState } from 'react'
-import { clearMessage, createNewBlog } from './actions/createblogActions';
+import { clearMessage, createNewBlog } from '../actions/createblogActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { notification } from 'antd';
 import { Spinner } from 'react-bootstrap';
@@ -15,8 +15,8 @@ function CreateBlog() {
 
 
   const tags = ['सरकारी योजना', 'स्कॉलरशिप', 'मराठी बातम्या', 'ऑनलाइन फॉर्म'];
-  const blogCreatedSuccess = useSelector(state => state.createblog.blogCreatedSuccess);
-  const blogCreatedFailure = useSelector(state => state.createblog.blogCreatedFailure);
+  const blogCreatedSuccess = useSelector(state => state.blog.blogCreatedSuccess);
+  const blogCreatedFailure = useSelector(state => state.blog.blogCreatedFailure);
 
 
 

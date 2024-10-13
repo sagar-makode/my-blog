@@ -8,10 +8,10 @@ function SearchBlog() {
   const navigate = useNavigate()
 
   const { data } = useParams(); // Extract the tag from the URL
-  const loading = useSelector(state => state.createblog.loading);
+  const loading = useSelector(state => state.blog.loading);
 
 
-  const allblogData = useSelector(state => state.createblog.allblogs);
+  const allblogData = useSelector(state => state.blog.allblogs);
 
   const dispatch = useDispatch()
 

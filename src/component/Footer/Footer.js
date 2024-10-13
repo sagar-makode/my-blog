@@ -28,7 +28,7 @@ function Footer() {
     return (
 
         <>
-            <div style={{ textDecoration: 'none', marginTop: "px" }}>
+            <div style={{ textDecoration: 'none', marginTop: "14px" }}>
 
                 <footer className=" text-lg-start footertext" style={{ backgroundColor: '#ffffd5' }}>
 

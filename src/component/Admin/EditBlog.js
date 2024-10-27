@@ -18,6 +18,7 @@ function EditBlog() {
     const blogupdatedFailure = useSelector(state => state.blog.blogupdatedFailure);
   
     const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
     const [content, setContent] = useState('');
     const [selectedTags, setSelectedTags] = useState([]);
     const [isLoading, setIsLoading] = useState(false);  // Loading state for submit action
@@ -37,6 +38,7 @@ function EditBlog() {
     useEffect(() => {
         if (blog) {
             setTitle(blog.title);
+            setDescription(blog.description);
             setContent(blog.content);
             setSelectedTags(blog.tag);
         }
@@ -48,6 +50,7 @@ function EditBlog() {
         
         const updatedBlog = {
             title,
+            description,
             content,
             tag: selectedTags,
             updatedAt: new Date()
@@ -108,6 +111,18 @@ function EditBlog() {
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
                                 placeholder="Enter Blog Title"
+                                className="form-control"
+                                required
+                            />
+                        </div>
+                        <div className="form-group mb-3">
+                            <label htmlFor="blogTitle">Blog Description</label>
+                            <input
+                                type="text"
+                                id="blogDescription"
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                                placeholder="Enter Blog Description"
                                 className="form-control"
                                 required
                             />

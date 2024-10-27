@@ -8,6 +8,8 @@ import { Spinner } from 'react-bootstrap';
 function CreateBlog() {
   const editor = useRef(null);  // Create a ref for the editor
   const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+
   const [content, setContent] = useState('');
   const dispatch = useDispatch();
   const [selectedTags, setSelectedTags] = useState([]); // State for selected tags
@@ -41,6 +43,7 @@ function CreateBlog() {
       setLoading(false)
       setTitle('');
       setContent('');
+      setDescription('')
       setSelectedTags('')
       const message = "ब्लॉग यशस्वीरित्या तयार झाला"
       const description = "अभिनंदन, तुम्ही ब्लॉग यशस्वीरित्या तयार केला आहे."
@@ -74,7 +77,8 @@ function CreateBlog() {
       title: title,
       content: content,
       createdAt: new Date(),
-      tag: selectedTags
+      tag: selectedTags,
+      description :description
     };
 
     dispatch(createNewBlog(newBlog));
@@ -105,6 +109,18 @@ function CreateBlog() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Enter Blog Title"
+                className="form-control"
+                required
+              />
+            </div>
+            <div className="form-group mb-3">
+              <label htmlFor="blogTitle">Blog Description</label>
+              <input
+                type="text"
+                id="blogDescription"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Enter Blog Description"
                 className="form-control"
                 required
               />

@@ -8,6 +8,8 @@ import { Spinner } from 'react-bootstrap';
 function CreateBlog() {
   const editor = useRef(null);  // Create a ref for the editor
   const [title, setTitle] = useState('');
+  const [slug, setSlug] = useState('');
+
   const [description, setDescription] = useState('');
 
   const [content, setContent] = useState('');
@@ -42,6 +44,7 @@ function CreateBlog() {
       // Reset form fields
       setLoading(false)
       setTitle('');
+      setSlug('');
       setContent('');
       setDescription('')
       setSelectedTags('')
@@ -75,6 +78,7 @@ function CreateBlog() {
     const newBlog = {
       // id: Date.now(),  // Unique ID for each blog (temporary)
       title: title,
+      slug:slug,
       content: content,
       createdAt: new Date(),
       tag: selectedTags,
@@ -114,7 +118,19 @@ function CreateBlog() {
               />
             </div>
             <div className="form-group mb-3">
-              <label htmlFor="blogTitle">Blog Description</label>
+              <label htmlFor="blogSlug">Blog url / slug</label>
+              <input
+                type="text"
+                id="blogSlug"
+                value={slug}
+                onChange={(e) => setSlug(e.target.value)}
+                placeholder="Enter Blog Url"
+                className="form-control"
+                required
+              />
+            </div>
+            <div className="form-group mb-3">
+              <label htmlFor="blogDescription">Blog Description</label>
               <input
                 type="text"
                 id="blogDescription"

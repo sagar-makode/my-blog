@@ -16,8 +16,10 @@ function EditBlog() {
     const loading = useSelector(state => state.blog.loadingeditblog);
     const blogupdatedSuccess = useSelector(state => state.blog.blogupdatedSuccess);
     const blogupdatedFailure = useSelector(state => state.blog.blogupdatedFailure);
-  
+
     const [title, setTitle] = useState('');
+    const [slug, setSlug] = useState('');
+
     const [description, setDescription] = useState('');
     const [content, setContent] = useState('');
     const [selectedTags, setSelectedTags] = useState([]);
@@ -38,6 +40,7 @@ function EditBlog() {
     useEffect(() => {
         if (blog) {
             setTitle(blog.title);
+            setSlug(blog.slug)
             setDescription(blog.description);
             setContent(blog.content);
             setSelectedTags(blog.tag);
@@ -47,15 +50,16 @@ function EditBlog() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);  // Set loading state to true
-        
+
         const updatedBlog = {
             title,
+            slug,
             description,
             content,
             tag: selectedTags,
             updatedAt: new Date()
         };
-        
+
         // Dispatching the update action
         dispatch(updateBlog(blogId, updatedBlog));
     };
@@ -116,7 +120,19 @@ function EditBlog() {
                             />
                         </div>
                         <div className="form-group mb-3">
-                            <label htmlFor="blogTitle">Blog Description</label>
+                            <label htmlFor="blogSlug">Blog url / slug</label>
+                            <input
+                                type="text"
+                                id="blogSlug"
+                                value={slug}
+                                onChange={(e) => setSlug(e.target.value)}
+                                placeholder="Enter Blog Url"
+                                className="form-control"
+                                required
+                            />
+                        </div>
+                        <div className="form-group mb-3">
+                            <label htmlFor="blogDescription">Blog Description</label>
                             <input
                                 type="text"
                                 id="blogDescription"

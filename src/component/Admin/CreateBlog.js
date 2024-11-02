@@ -24,8 +24,6 @@ function CreateBlog() {
 
 
 
-
-
   const openNotification = (message, description, type) => {
     const textColor = type === 'success' ? 'black' : 'red';
     const args = {

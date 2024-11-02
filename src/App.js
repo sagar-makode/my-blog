@@ -24,15 +24,15 @@ function App() {
 
 
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        {/* <Route exact path='/' element={<Home />} /> */}
         <Route exact path='/admin/createblog' element={<CreateBlog />} />
 
-        <Route exact path='/allblogs' element={<BlogCard />} />
-        <Route exact path="/:title" element={<BlogDetails/>} />
-        <Route exact path="/tag/:search" element={<Tagblog/>} />
-        <Route exact path="/search/:data" element={<SearchBlog/>} />
+        {/* <Route exact path='/allblogs' element={<BlogCard />} /> */}
+        {/* <Route exact path="/:title" element={<BlogDetails/>} /> */}
+        {/* <Route exact path="/tag/:search" element={<Tagblog/>} /> */}
+        {/* <Route exact path="/search/:data" element={<SearchBlog/>} /> */}
         <Route path="/edit/:blogId" element={<EditBlog />} /> {/* Edit blog route */}
-        <Route exact path="/admin/login" element={<Login/>} />
+        <Route exact path="/" element={<Login/>} />
         <Route exact path="/admin/dashboard" element={<AllBlogList/>} />
 
 

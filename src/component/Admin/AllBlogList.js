@@ -26,7 +26,7 @@ function AllBlogList() {
 
     useEffect(() => {
         if (!isAuthenticated) {
-            navigate('/admin/login');
+            navigate('/');
         }
     }, [isAuthenticated, navigate]);
 

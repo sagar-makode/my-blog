@@ -7,7 +7,7 @@ import templates from '../templates/templates';
 
 const GenerateBiodataImages = ({ sections, selectedTemplate, onImageGenerated }) => {
 
-    const selectedTemplateData = templates.find(template => template.id === selectedTemplate);
+    const selectedTemplateData = templates.find(template => template.id === selectedTemplate) || templates[1];
 
     const [image] = useImage(selectedTemplateData.image, 'anonymous'); // Set crossOrigin to anonymous
     const stageRef = useRef(null); // Ref for Konva stage

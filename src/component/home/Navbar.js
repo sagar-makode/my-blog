@@ -81,6 +81,10 @@ function Navbar() {
                 <Link className="nav-link active" aria-current="page" onClick={closeNavbar} to="/">होम</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" onClick={closeNavbar} to="/free-marriage-biodata">बायोडाटा</Link>
+              </li>
+             
+              <li className="nav-item">
                 <button className="nav-link active" aria-current="page" onClick={() => handleCombinedClick('सरकारी योजना')}>सरकारी योजना</button>
               </li>
               <li className="nav-item">

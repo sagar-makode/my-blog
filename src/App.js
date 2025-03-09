@@ -13,6 +13,9 @@ import EditBlog from "./component/Admin/EditBlog";
 import Login from "./component/Admin/Login";
 import AllBlogList from "./component/Admin/AllBlogList";
 import { AuthProvider } from "./component/Admin/AuthContext";
+import LandingPage from "./biodatamaker/pages/LandingPage";
+import BiodataPreview from "./biodatamaker/pages/BiodataPreview";
+import './biodata.css'
 function App() {
 
   
@@ -34,6 +37,9 @@ function App() {
         <Route path="/edit/:blogId" element={<EditBlog />} /> {/* Edit blog route */}
         <Route exact path="/admin/login" element={<Login/>} />
         <Route exact path="/admin/dashboard" element={<AllBlogList/>} />
+        <Route exact path="/free-marriage-biodata" element={<LandingPage  />} />
+        <Route exact path="/free-marriage-biodata/preview" element={<BiodataPreview />} />
+
 
 
 

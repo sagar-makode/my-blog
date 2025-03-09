@@ -77,10 +77,10 @@ function Navbar() {
           </button>
           <div className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`} id="navbarScroll">
             <ul className="navbar-nav me-auto my-2 my-lg-0 mx-auto" style={{ "--bs-scroll-height": "100px" }}>
-              {/* <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" onClick={closeNavbar} to="/">Login</Link>
-              </li> */}
-              {/* <li className="nav-item">
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" onClick={closeNavbar} to="/">होम</Link>
+              </li>
+              <li className="nav-item">
                 <button className="nav-link active" aria-current="page" onClick={() => handleCombinedClick('सरकारी योजना')}>सरकारी योजना</button>
               </li>
               <li className="nav-item">
@@ -91,7 +91,7 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <button className="nav-link active" aria-current="page" onClick={() => handleCombinedClick('ऑनलाइन फॉर्म')}>ऑनलाइन फॉर्म</button>
-              </li> */}
+              </li>
 
               {isAuthenticated ? (
                 <>
@@ -110,7 +110,7 @@ function Navbar() {
               ) : ("")}
 
             </ul>
-            {/* <form className="d-flex" role="search" onSubmit={handleSearchSubmit}>
+            <form className="d-flex" role="search" onSubmit={handleSearchSubmit}>
               <input
                 className="form-control me-2"
                 type="search"
@@ -122,7 +122,7 @@ function Navbar() {
               <button className="btn" type="submit" style={{ margin: '0', padding: '0' }}>
                 <span className="material-symbols-outlined">search</span>
               </button>
-            </form> */}
+            </form>
           </div>
         </div>
       </nav>

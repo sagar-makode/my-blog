@@ -13,7 +13,7 @@ import { CREATE_NEW_BLOG, CREATEE_NEW_BLOG_SUCCESS, CREATEE_NEW_BLOGT_FAILURE, D
     try {
       const token = sessionStorage.getItem('token');
 
-      const response = yield call(axios.post, "https://my-blog-api-36vn.onrender.com/createblog", action.payload,
+      const response = yield call(axios.post, "https://blog-backend-un3d.onrender.com/createblog", action.payload,
         {
           headers: {
             Authorization: `Bearer${token}`
@@ -37,7 +37,7 @@ import { CREATE_NEW_BLOG, CREATEE_NEW_BLOG_SUCCESS, CREATEE_NEW_BLOGT_FAILURE, D
   function* fetchAllblogsdatasaga() {
     try {
       
-       const response = yield call(axios.get, "https://my-blog-api-36vn.onrender.com/allblog");
+       const response = yield call(axios.get, "https://blog-backend-un3d.onrender.com/allblog");
    
       const blogData = response.data;
     
@@ -56,7 +56,7 @@ import { CREATE_NEW_BLOG, CREATEE_NEW_BLOG_SUCCESS, CREATEE_NEW_BLOGT_FAILURE, D
       const id  = action.payload; // Extract blogId from the action payload
       const token = sessionStorage.getItem('token');
 
-      const response = yield call(axios.get, `https://my-blog-api-36vn.onrender.com/getblog/${id}`,{
+      const response = yield call(axios.get, `https://blog-backend-un3d.onrender.com/getblog/${id}`,{
         headers: {
           Authorization: `Bearer${token}`
         }
@@ -82,7 +82,7 @@ import { CREATE_NEW_BLOG, CREATEE_NEW_BLOG_SUCCESS, CREATEE_NEW_BLOGT_FAILURE, D
         const token = sessionStorage.getItem('token');
 
         // Send PUT request to update the blog
-        const response = yield call(axios.put, `https://my-blog-api-36vn.onrender.com/updateblog/${id}`, updatedBlogData,
+        const response = yield call(axios.put, `https://blog-backend-un3d.onrender.com/updateblog/${id}`, updatedBlogData,
           {
             headers: {
               Authorization: `Bearer${token}`
@@ -105,7 +105,7 @@ function* deleteBlogSaga(action) {
       const token = sessionStorage.getItem('token');
 
       // Send DELETE request to remove the blog
-      const response = yield call(axios.delete, `https://my-blog-api-36vn.onrender.com/deleteblog/${id}`,{
+      const response = yield call(axios.delete, `https://blog-backend-un3d.onrender.com/deleteblog/${id}`,{
         headers: {
           Authorization: `Bearer${token}`
         }
@@ -127,7 +127,7 @@ function* deleteBlogSaga(action) {
 
 function* handleSigninsaga(action) {
   try {
-    const response = yield call(axios.post, "https://my-blog-api-36vn.onrender.com/admin/login",action.payload);
+    const response = yield call(axios.post, "https://blog-backend-un3d.onrender.com/admin/login",action.payload);
     
     if (response.data.token) {
       yield put({ type: SIGNIN_SUCCESS}); 

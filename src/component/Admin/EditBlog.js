@@ -29,7 +29,7 @@ function EditBlog() {
     const tags = ['सरकारी योजना', 'स्कॉलरशिप', 'मराठी बातम्या', 'ऑनलाइन फॉर्म'];
     useEffect(() => {
         if (!isAuthenticated) {
-            navigate('/');
+            navigate('/admin/login');
         }
     }, [isAuthenticated, navigate]);
 
